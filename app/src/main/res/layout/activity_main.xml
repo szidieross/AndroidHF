@@ -14,6 +14,7 @@
         android:layout_marginTop="18dp"
         android:fontFamily="@font/semibold"
         android:text="Pizza Italiano"
+        android:textFontWeight="800"
         android:textColor="#A66661"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,10 +89,11 @@
             android:layout_marginStart="140dp"
             android:fontFamily="@font/semibold"
             android:text="Our Offers"
+            android:textFontWeight="800"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="33dp" />
+            tools:layout_editor_absoluteY="13dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/asia_recycler"
