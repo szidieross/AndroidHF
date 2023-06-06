@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         List<AsiaFood> asiaFoodList = new ArrayList<>();
-        asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p1, "4.8", "Briand Restaurant"));
+        asiaFoodList.add(new AsiaFood("Prosciutto Pizza", "$20", R.drawable.p1, "4.8", "Briand Restaurant"));
         asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p2, "4.1", "Friends Restaurant"));
         asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p3, "4.5", "Briand Restaurant"));
         asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p4, "4.2", "Friends Restaurant"));

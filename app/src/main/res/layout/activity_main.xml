@@ -14,7 +14,7 @@
         android:layout_marginTop="18dp"
         android:fontFamily="@font/semibold"
         android:text="Pizza Italiano"
-        android:textColor="#272677"
+        android:textColor="#A66661"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
