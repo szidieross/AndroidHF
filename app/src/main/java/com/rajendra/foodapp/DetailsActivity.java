@@ -1,6 +1,7 @@
 package com.rajendra.foodapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.rajendra.foodapp.CartManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -80,9 +81,35 @@ public class DetailsActivity extends AppCompatActivity {
         finish();
     }
 
-    private void addToCart() {
+    private void addToCart1() {
         Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
     }
+
+    private void addToCart() {
+        String itemName = textName.getText().toString();
+        String itemPrice = textPrice.getText().toString();
+        int itemQuantity = quantity;
+
+        // Add multiple cart items based on the itemQuantity value
+        for (int i = 0; i < itemQuantity; i++) {
+            // Create a CartItem object with the item details
+            CartItem cartItem = new CartItem(itemName, itemPrice, 1); // Each item has a quantity of 1
+
+            // Add the cart item to the cart
+            CartManager.getInstance().addToCart(cartItem);
+        }
+
+        // Get the count of items in the cartItems list
+        int itemCount = CartManager.getInstance().getCartItems().size();
+
+        // Show a toast message indicating the item was added to the cart and the total item count
+        String message = "Item added to cart. Total items: " + itemCount;
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
     private void increaseAmount() {
         quantity++;
         amount.setText(String.valueOf(quantity));
