@@ -32,6 +32,14 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonAddToCart = findViewById(R.id.button);
+        buttonAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addToCart();
+            }
+        });
+
         Intent intent = getIntent();
         if (intent != null) {
             String name = intent.getStringExtra("name");
@@ -51,4 +59,9 @@ public class DetailsActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    private void addToCart() {
+        Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
+    }
+
 }
