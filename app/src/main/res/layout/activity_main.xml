@@ -4,49 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/layout_bg"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/semibold"
         android:text="Pizza Italiano"
-        android:textColor="#A66661"
-        android:textFontWeight="800"
-        android:textSize="24sp"
+        android:textColor="#8C524E"
+        android:textFontWeight="900"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/cartImage"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cart1" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/search_bg"
-        android:drawableLeft="@drawable/ic_search_black_24dp"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:hint="@android:string/search_go"
-        android:inputType="textPersonName"
-        android:paddingStart="16dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -57,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="1.0">
 
 
@@ -73,8 +56,7 @@
             android:textFontWeight="900"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0"
-            tools:layout_editor_absoluteY="13dp" />
+            tools:layout_editor_absoluteY="-8dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/asia_recycler"

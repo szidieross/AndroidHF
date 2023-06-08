@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="10dp"
+    android:backgroundTint="@color/colorBackground"
     android:elevation="5dp"
     android:layout_marginTop="16dp"
     android:layout_marginStart="8dp"
@@ -17,8 +18,8 @@
 
         <ImageView
             android:id="@+id/food_image"
-            android:layout_width="102dp"
-            android:layout_height="84dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:adjustViewBounds="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
