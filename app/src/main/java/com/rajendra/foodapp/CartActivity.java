@@ -67,20 +67,11 @@ public class CartActivity extends AppCompatActivity {
             price = itemPrice.substring(1);
             totalPrice += Double.parseDouble(price);
 
-            // Create TextViews for item name and price
             TextView itemNameTextView = new TextView(this);
-            itemNameTextView.setText(itemName);
+            itemNameTextView.setText(itemName + ": " + itemPrice);
             itemNameTextView.setTextColor(getResources().getColor(R.color.colorText));
             itemNameTextView.setTextSize(18);
-
-            TextView itemPriceTextView = new TextView(this);
-            itemPriceTextView.setText(itemPrice);
-            itemPriceTextView.setTextColor(getResources().getColor(R.color.colorText));
-            itemPriceTextView.setTextSize(18);
-
-            // Add TextViews to the cartItemsLayout
             cartItemsLayout.addView(itemNameTextView);
-            cartItemsLayout.addView(itemPriceTextView);
         }
 
         TextView totalAmountTextView = new TextView(this);

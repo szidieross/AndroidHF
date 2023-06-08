@@ -1,12 +1,12 @@
 package com.rajendra.foodapp.model;
 
-public class AsiaFood {
+public class Pizza {
 
     String name;
     String price;
     Integer imageUrl;
 
-    public AsiaFood(String name, String price, Integer imageUrl, String rating, String restorantname) {
+    public Pizza(String name, String price, Integer imageUrl, String rating, String restorantname) {
         this.name = name;
         this.price = price;
         this.imageUrl = imageUrl;

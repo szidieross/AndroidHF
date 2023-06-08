@@ -21,23 +21,17 @@ public class CartManager {
     public void addToCart(CartItem item) {
         cartItems.add(item);
     }
-    public double getTotalPrice(CartItem item) {
-        return 120;
-    }
-    public int getTotalQuantity(CartItem item) {
-        return 20;
-    }
 
-    public void removeFromCart(CartItem item) {
-        cartItems.remove(item);
-    }
+//    public void removeFromCart(CartItem item) {
+//        cartItems.remove(item);
+//    }
 
     public List<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void clearCart() {
-        cartItems.clear();
-    }
+//    public void clearCart() {
+//        cartItems.clear();
+//    }
 }
 

@@ -74,7 +74,6 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
 
-
     private void navigateToMainActivity() {
         Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
         startActivity(intent);
@@ -90,25 +89,17 @@ public class DetailsActivity extends AppCompatActivity {
         String itemPrice = textPrice.getText().toString();
         int itemQuantity = quantity;
 
-        // Add multiple cart items based on the itemQuantity value
         for (int i = 0; i < itemQuantity; i++) {
-            // Create a CartItem object with the item details
-            CartItem cartItem = new CartItem(itemName, itemPrice, 1); // Each item has a quantity of 1
+            CartItem cartItem = new CartItem(itemName, itemPrice, 1);
 
-            // Add the cart item to the cart
             CartManager.getInstance().addToCart(cartItem);
         }
 
-        // Get the count of items in the cartItems list
         int itemCount = CartManager.getInstance().getCartItems().size();
 
-        // Show a toast message indicating the item was added to the cart and the total item count
         String message = "Items added to cart: " + itemQuantity + ". Total items: " + itemCount;
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
-
-
-
 
     private void increaseAmount() {
         quantity++;

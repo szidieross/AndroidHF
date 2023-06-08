@@ -1,7 +1,6 @@
 package com.rajendra.foodapp.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,25 +10,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rajendra.foodapp.DetailsActivity;
 import com.rajendra.foodapp.R;
-import com.rajendra.foodapp.model.AsiaFood;
+import com.rajendra.foodapp.model.Pizza;
 
 import java.util.List;
 
-public class AsiaFoodAdapter extends RecyclerView.Adapter<AsiaFoodAdapter.AsiaFoodViewHolder> {
+public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.AsiaFoodViewHolder> {
 
     private Context context;
-    private List<AsiaFood> asiaFoodList;
+    private List<Pizza> pizzaList;
     private OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener {
-        void onItemClick(AsiaFood item);
+        void onItemClick(Pizza item);
     }
 
-    public AsiaFoodAdapter(Context context, List<AsiaFood> asiaFoodList) {
+    public PizzaAdapter(Context context, List<Pizza> pizzaList) {
         this.context = context;
-        this.asiaFoodList = asiaFoodList;
+        this.pizzaList = pizzaList;
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -45,7 +43,7 @@ public class AsiaFoodAdapter extends RecyclerView.Adapter<AsiaFoodAdapter.AsiaFo
 
     @Override
     public void onBindViewHolder(@NonNull AsiaFoodViewHolder holder, int position) {
-        final AsiaFood item = asiaFoodList.get(position);
+        final Pizza item = pizzaList.get(position);
 
         holder.foodImage.setImageResource(item.getImageUrl());
         holder.name.setText(item.getName());
@@ -63,7 +61,7 @@ public class AsiaFoodAdapter extends RecyclerView.Adapter<AsiaFoodAdapter.AsiaFo
 
     @Override
     public int getItemCount() {
-        return asiaFoodList.size();
+        return pizzaList.size();
     }
 
     public static class AsiaFoodViewHolder extends RecyclerView.ViewHolder {
