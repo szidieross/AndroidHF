@@ -17,41 +17,46 @@ import com.rajendra.foodapp.model.AsiaFood;
 
 import java.util.List;
 
-
 public class AsiaFoodAdapter extends RecyclerView.Adapter<AsiaFoodAdapter.AsiaFoodViewHolder> {
 
-    Context context;
-    List<AsiaFood> asiaFoodList;
+    private Context context;
+    private List<AsiaFood> asiaFoodList;
+    private OnItemClickListener onItemClickListener;
 
-
+    public interface OnItemClickListener {
+        void onItemClick(AsiaFood item);
+    }
 
     public AsiaFoodAdapter(Context context, List<AsiaFood> asiaFoodList) {
         this.context = context;
         this.asiaFoodList = asiaFoodList;
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
+
     @NonNull
     @Override
     public AsiaFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(context).inflate(R.layout.asia_food_row_item, parent, false);
         return new AsiaFoodViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder( AsiaFoodViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AsiaFoodViewHolder holder, int position) {
+        final AsiaFood item = asiaFoodList.get(position);
 
-        holder.foodImage.setImageResource(asiaFoodList.get(position).getImageUrl());
-        holder.name.setText(asiaFoodList.get(position).getName());
-        holder.price.setText(asiaFoodList.get(position).getPrice());
-        holder.rating.setText(asiaFoodList.get(position).getRating());
-        holder.restorantName.setText(asiaFoodList.get(position).getRestorantname());
+        holder.foodImage.setImageResource(item.getImageUrl());
+        holder.name.setText(item.getName());
+        holder.price.setText(item.getPrice());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, DetailsActivity.class);
-                context.startActivity(i);
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(item);
+                }
             }
         });
     }
@@ -61,25 +66,15 @@ public class AsiaFoodAdapter extends RecyclerView.Adapter<AsiaFoodAdapter.AsiaFo
         return asiaFoodList.size();
     }
 
-
-    public static final class AsiaFoodViewHolder extends RecyclerView.ViewHolder{
-
-
+    public static class AsiaFoodViewHolder extends RecyclerView.ViewHolder {
         ImageView foodImage;
-        TextView price, name, rating, restorantName;
+        TextView price, name, rating, restaurantName;
 
         public AsiaFoodViewHolder(@NonNull View itemView) {
             super(itemView);
-
             foodImage = itemView.findViewById(R.id.food_image);
             price = itemView.findViewById(R.id.price);
             name = itemView.findViewById(R.id.name);
-            rating = itemView.findViewById(R.id.rating);
-            restorantName = itemView.findViewById(R.id.restorant_name);
-
-
-
         }
     }
-
 }

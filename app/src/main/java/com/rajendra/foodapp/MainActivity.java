@@ -1,5 +1,6 @@
 package com.rajendra.foodapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import com.rajendra.foodapp.model.AsiaFood;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AsiaFoodAdapter.OnItemClickListener {
 
     RecyclerView popularRecycler, asiaRecycler;
     AsiaFoodAdapter asiaFoodAdapter;
@@ -21,20 +22,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // now here we will add some dummy data to out model class
-
-//        List<PopularFood> popularFoodList = new ArrayList<>();
-//
-//        popularFoodList.add(new PopularFood("Float Cake Vietnam", "$nothing", R.drawable.popularfood1));
-//        popularFoodList.add(new PopularFood("Chiken Drumstick", "$17.05", R.drawable.popularfood2));
-//        popularFoodList.add(new PopularFood("Fish Tikka Stick", "$25.05", R.drawable.popularfood3));
-//        popularFoodList.add(new PopularFood("Float Cake Vietnam", "$7.05", R.drawable.popularfood1));
-//        popularFoodList.add(new PopularFood("Chiken Drumstick", "$17.05", R.drawable.popularfood2));
-//        popularFoodList.add(new PopularFood("Fish Tikka Stick", "$25.05", R.drawable.popularfood3));
-//
-//        setPopularRecycler(popularFoodList);
-
 
         List<AsiaFood> asiaFoodList = new ArrayList<>();
         asiaFoodList.add(new AsiaFood("Exotic Pizza", "$20", R.drawable.p1, "4.8", "Briand Restaurant"));
@@ -49,27 +36,22 @@ public class MainActivity extends AppCompatActivity {
         asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p10, "4.5", "Briand Restaurant"));
 
         setAsiaRecycler(asiaFoodList);
-
     }
 
-
-//    private void setPopularRecycler(List<PopularFood> popularFoodList) {
-//
-//        popularRecycler = findViewById(R.id.popular_recycler);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-//        popularRecycler.setLayoutManager(layoutManager);
-//        popularFoodAdapter = new PopularFoodAdapter(this, popularFoodList);
-//        popularRecycler.setAdapter(popularFoodAdapter);
-//
-//    }
-
     private void setAsiaRecycler(List<AsiaFood> asiaFoodList) {
-
         asiaRecycler = findViewById(R.id.asia_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         asiaRecycler.setLayoutManager(layoutManager);
         asiaFoodAdapter = new AsiaFoodAdapter(this, asiaFoodList);
+        asiaFoodAdapter.setOnItemClickListener(this);
         asiaRecycler.setAdapter(asiaFoodAdapter);
+    }
 
+    @Override
+    public void onItemClick(AsiaFood item) {
+        Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+        intent.putExtra("name", item.getName());
+        intent.putExtra("price", item.getPrice());
+        startActivity(intent);
     }
 }
