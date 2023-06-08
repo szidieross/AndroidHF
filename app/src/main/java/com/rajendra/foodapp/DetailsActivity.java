@@ -3,46 +3,29 @@ package com.rajendra.foodapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class DetailsActivity extends AppCompatActivity {
+
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast("Button Clicked!");
+            }
+        });
     }
 
-//    String name;
-//    String price;
-//    Integer imageUrl;
-//
-//    public DetailsActivity(String name, String price, Integer imageUrl) {
-//        this.name = name;
-//        this.price = price;
-//        this.imageUrl = imageUrl;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getPrice() {
-//        return price;
-//    }
-//
-//    public void setPrice(String price) {
-//        this.price = price;
-//    }
-//
-//    public Integer getImageUrl() {
-//        return imageUrl;
-//    }
-//
-//    public void setImageUrl(Integer imageUrl) {
-//        this.imageUrl = imageUrl;
-//    }
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 }

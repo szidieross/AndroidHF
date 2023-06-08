@@ -28,16 +28,17 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/cart1" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.611"
         app:srcCompat="@drawable/ic_notification" />
 
     <EditText
@@ -45,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/search_bg"
         android:drawableLeft="@drawable/ic_search_black_24dp"
@@ -55,6 +56,7 @@
         android:inputType="textPersonName"
         android:paddingStart="16dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -89,10 +91,10 @@
             android:layout_marginStart="140dp"
             android:fontFamily="@font/semibold"
             android:text="Our Offers"
-            android:textFontWeight="800"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
             tools:layout_editor_absoluteY="13dp" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -135,5 +137,7 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

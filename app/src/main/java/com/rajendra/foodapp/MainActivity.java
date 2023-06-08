@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rajendra.foodapp.adapter.AsiaFoodAdapter;
-import com.rajendra.foodapp.adapter.PopularFoodAdapter;
 import com.rajendra.foodapp.model.AsiaFood;
 
 import java.util.ArrayList;
@@ -16,7 +15,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView popularRecycler, asiaRecycler;
-    PopularFoodAdapter popularFoodAdapter;
     AsiaFoodAdapter asiaFoodAdapter;
 
     @Override
@@ -39,15 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         List<AsiaFood> asiaFoodList = new ArrayList<>();
-        asiaFoodList.add(new AsiaFood("Prosciutto Pizza", "$20", R.drawable.p1, "4.8", "Briand Restaurant"));
-        asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p2, "4.1", "Friends Restaurant"));
-        asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p3, "4.5", "Briand Restaurant"));
-        asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p4, "4.2", "Friends Restaurant"));
-        asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p5, "4.5", "Briand Restaurant"));
-        asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p6, "4.2", "Friends Restaurant"));
-        asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p7, "4.1", "Friends Restaurant"));
+        asiaFoodList.add(new AsiaFood("Exotic Pizza", "$20", R.drawable.p1, "4.8", "Briand Restaurant"));
+        asiaFoodList.add(new AsiaFood("Cheese Cake", "$25", R.drawable.p2, "4.1", "Friends Restaurant"));
+        asiaFoodList.add(new AsiaFood("Salami Pizza", "$20", R.drawable.p3, "4.5", "Briand Restaurant"));
+        asiaFoodList.add(new AsiaFood("Chicago Pizza", "$25", R.drawable.p4, "4.2", "Friends Restaurant"));
+        asiaFoodList.add(new AsiaFood("Prosciutto Pizza", "$20", R.drawable.p5, "4.5", "Briand Restaurant"));
+        asiaFoodList.add(new AsiaFood("Truffle Pizza", "$25", R.drawable.p6, "4.2", "Friends Restaurant"));
+        asiaFoodList.add(new AsiaFood("New York Pizza", "$25", R.drawable.p7, "4.1", "Friends Restaurant"));
         asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p8, "4.5", "Briand Restaurant"));
-        asiaFoodList.add(new AsiaFood("Straberry Cake", "$25", R.drawable.p9, "4.2", "Friends Restaurant"));
+        asiaFoodList.add(new AsiaFood("Mini Pizza", "$25", R.drawable.p9, "4.2", "Friends Restaurant"));
         asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p10, "4.5", "Briand Restaurant"));
 
         setAsiaRecycler(asiaFoodList);

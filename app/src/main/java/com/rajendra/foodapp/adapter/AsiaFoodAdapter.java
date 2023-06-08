@@ -1,6 +1,7 @@
 package com.rajendra.foodapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rajendra.foodapp.DetailsActivity;
 import com.rajendra.foodapp.R;
 import com.rajendra.foodapp.model.AsiaFood;
-import com.rajendra.foodapp.model.PopularFood;
 
 import java.util.List;
 
@@ -46,6 +47,13 @@ public class AsiaFoodAdapter extends RecyclerView.Adapter<AsiaFoodAdapter.AsiaFo
         holder.rating.setText(asiaFoodList.get(position).getRating());
         holder.restorantName.setText(asiaFoodList.get(position).getRestorantname());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, DetailsActivity.class);
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
