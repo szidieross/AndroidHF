@@ -15,6 +15,9 @@ import java.util.List;
 public class CartActivity extends AppCompatActivity {
     private Button buttonGoBack, buttonOrder;
     private LinearLayout cartItemsLayout;
+    private double totalPrice = 0.0;
+    private int totalAmount = 0;
+    private String price = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +42,8 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
-        // Get the list of cart items from the CartManager
         List<CartItem> cartItems = CartManager.getInstance().getCartItems();
 
-        // Display the cart items in the cartItemsLayout
         displayCartItems(cartItems);
     }
 
@@ -62,6 +63,10 @@ public class CartActivity extends AppCompatActivity {
             String itemName = cartItem.getItemName();
             String itemPrice = cartItem.getItemPrice();
 
+            totalAmount += 1;
+            price = itemPrice.substring(1);
+            totalPrice += Double.parseDouble(price);
+
             // Create TextViews for item name and price
             TextView itemNameTextView = new TextView(this);
             itemNameTextView.setText(itemName);
@@ -77,5 +82,17 @@ public class CartActivity extends AppCompatActivity {
             cartItemsLayout.addView(itemNameTextView);
             cartItemsLayout.addView(itemPriceTextView);
         }
+
+        TextView totalAmountTextView = new TextView(this);
+        totalAmountTextView.setText("Pizza Amount: " + totalAmount);
+        totalAmountTextView.setTextColor(getResources().getColor(R.color.colorText));
+        totalAmountTextView.setTextSize(18);
+        cartItemsLayout.addView(totalAmountTextView);
+
+        TextView totalPriceTextView = new TextView(this);
+        totalPriceTextView.setText("Total Price: $" + String.format("%.2f", totalPrice));
+        totalPriceTextView.setTextColor(getResources().getColor(R.color.colorText));
+        totalPriceTextView.setTextSize(18);
+        cartItemsLayout.addView(totalPriceTextView);
     }
 }
