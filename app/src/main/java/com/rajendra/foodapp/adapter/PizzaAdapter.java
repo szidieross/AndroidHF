@@ -37,7 +37,7 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.AsiaFoodView
     @NonNull
     @Override
     public AsiaFoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.asia_food_row_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.pizza_row_item, parent, false);
         return new AsiaFoodViewHolder(view);
     }
 
