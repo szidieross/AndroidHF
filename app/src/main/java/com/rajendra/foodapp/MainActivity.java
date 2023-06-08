@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements AsiaFoodAdapter.O
         Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
         intent.putExtra("name", item.getName());
         intent.putExtra("price", item.getPrice());
+        intent.putExtra("image", item.getImageUrl());
         startActivity(intent);
     }
 }
