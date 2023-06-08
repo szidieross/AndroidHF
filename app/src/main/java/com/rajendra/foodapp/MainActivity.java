@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements AsiaFoodAdapter.O
 
         List<AsiaFood> asiaFoodList = new ArrayList<>();
         asiaFoodList.add(new AsiaFood("Exotic Pizza", "$20", R.drawable.p1, "4.8", "Briand Restaurant"));
-        asiaFoodList.add(new AsiaFood("Cheese Cake", "$25", R.drawable.p2, "4.1", "Friends Restaurant"));
+        asiaFoodList.add(new AsiaFood("Cheese Pizza", "$25", R.drawable.p2, "4.1", "Friends Restaurant"));
         asiaFoodList.add(new AsiaFood("Salami Pizza", "$20", R.drawable.p3, "4.5", "Briand Restaurant"));
         asiaFoodList.add(new AsiaFood("Chicago Pizza", "$25", R.drawable.p4, "4.2", "Friends Restaurant"));
         asiaFoodList.add(new AsiaFood("Prosciutto Pizza", "$20", R.drawable.p5, "4.5", "Briand Restaurant"));

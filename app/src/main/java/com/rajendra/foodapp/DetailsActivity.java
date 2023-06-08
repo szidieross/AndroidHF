@@ -13,8 +13,11 @@ import android.widget.Toast;
 public class DetailsActivity extends AppCompatActivity {
 
     private Button buttonGoBack;
-    private TextView textName, textPrice;
+    private Button minus;
+    private Button plus;
+    private TextView textName, textPrice,amount;
     private ImageView foodImage;
+    private int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,9 @@ public class DetailsActivity extends AppCompatActivity {
         textName = findViewById(R.id.textName);
         textPrice = findViewById(R.id.textPrice);
         foodImage = findViewById(R.id.foodImage);
+        minus = findViewById(R.id.minus);
+        plus = findViewById(R.id.plus);
+        amount = findViewById(R.id.amount);
         buttonGoBack = findViewById(R.id.buttonGoBack);
         buttonGoBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +43,20 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addToCart();
+            }
+        });
+
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decreaseAmount();
+            }
+        });
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                increaseAmount();
             }
         });
 
@@ -63,5 +83,15 @@ public class DetailsActivity extends AppCompatActivity {
     private void addToCart() {
         Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show();
     }
+    private void increaseAmount() {
+        quantity++;
+        amount.setText(String.valueOf(quantity));
+    }
 
+    private void decreaseAmount() {
+        if (quantity > 1) {
+            quantity--;
+            amount.setText(String.valueOf(quantity));
+        }
+    }
 }
