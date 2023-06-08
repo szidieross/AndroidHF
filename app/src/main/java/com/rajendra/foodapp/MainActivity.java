@@ -2,6 +2,9 @@ package com.rajendra.foodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,6 +39,19 @@ public class MainActivity extends AppCompatActivity implements AsiaFoodAdapter.O
         asiaFoodList.add(new AsiaFood("Chicago Pizza", "$20", R.drawable.p10, "4.5", "Briand Restaurant"));
 
         setAsiaRecycler(asiaFoodList);
+
+        ImageView cartImage = findViewById(R.id.cartImage);
+        cartImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                startActivity(intent);
+
+//                Toast.makeText(MainActivity.this, "Navigating to cart", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     private void setAsiaRecycler(List<AsiaFood> asiaFoodList) {
@@ -55,4 +71,6 @@ public class MainActivity extends AppCompatActivity implements AsiaFoodAdapter.O
         intent.putExtra("image", item.getImageUrl());
         startActivity(intent);
     }
+
+
 }

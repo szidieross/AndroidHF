@@ -103,7 +103,7 @@ public class DetailsActivity extends AppCompatActivity {
         int itemCount = CartManager.getInstance().getCartItems().size();
 
         // Show a toast message indicating the item was added to the cart and the total item count
-        String message = "Item added to cart. Total items: " + itemCount;
+        String message = "Items added to cart: " + itemQuantity + ". Total items: " + itemCount;
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
